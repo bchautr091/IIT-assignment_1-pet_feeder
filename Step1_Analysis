@@ -1,1 +1,34 @@
+A local animal shelter is looking for an inexpensive automatic pet feeder that is able to dispense food to pets at preset times, monitor food consumption, and trigger an alert to staff if a problem occurs. The shelter plans to eventually build the system using affordable components such as a servo motor and basic sensors. 
 
+The inputs for the system include feeding times, types of pet, food consumption sensor. The outputs of the system are timely food dispensing, alerts, and recording or displaying consumption data. The possible assumptions or limitations would be running out of food, staff miss the notification, only one type of pet food is used for both dogs and cats.
+
+
+**Simple sketch of the system:** 
+
+Start → Input Real Time 
+
+IF Current time != feeding time ( 8 AM or 6 PM)→ display “not feeding time”, continue loop
+
+ELSE identify pet profile ( type of pet, size) 
+
+Calculate amount of required food
+
+Check if food is sufficient or not ?
+
+No: trigger alert “ low food supply” → end
+
+Yes: continue activate dispenser motor 
+
+Dispend to correct bowl
+
+Check if dispensing was successful
+
+No: trigger alert → end
+
+Yes: continue
+
+Read weight sensor → Wait 15 mins → compare initial weight with final weight 
+
+IF initial = final → alert → end
+
+IF initial > final → collect data → display → end
